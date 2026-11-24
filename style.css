@@ -1,0 +1,381 @@
+:root {
+  --bg-light: #f8fafc;
+  --surface-white: #ffffff;
+  --primary-color: #0f766e; /* لون طبي هادئ (Teal/Blue-Green) */
+  --primary-dark: #115e59;
+  --whatsapp-color: #25d366;
+  --whatsapp-hover: #1ebe5d;
+  --text-dark: #0f172a;
+  --text-muted: #475569;
+  --border-color: #e2e8f0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Cairo", sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* الأزرار والحركة */
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background-color: var(--whatsapp-color);
+  color: #ffffff;
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.25);
+}
+
+.btn-primary:hover {
+  background-color: var(--whatsapp-hover);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+/* Navbar (موبايل أولاً) */
+.navbar {
+  background-color: var(--surface-white);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: 0.92rem;
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+.btn-nav {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  padding: 8px 16px;
+  font-size: 0.88rem;
+}
+
+.btn-nav:hover {
+  background-color: var(--primary-dark);
+}
+
+/* الأقسام العامة */
+section {
+  padding: 56px 0;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 24px;
+}
+
+/* Hero (موبايل أولاً: عمود واحد) */
+.hero {
+  background-color: var(--surface-white);
+  padding-top: 36px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.hero-content h1 {
+  font-size: 1.75rem;
+  line-height: 1.35;
+  margin-bottom: 14px;
+}
+
+.hero-subtitle {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-bottom: 22px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hero-image img {
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* الخدمات (موبايل أولاً: بطاقة واحدة في الصف) */
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.service-card {
+  background-color: var(--surface-white);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 22px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary-color);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.07);
+}
+
+.service-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+}
+
+.service-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* نبذة عن الدكتور والمواعيد والعنوان (موبايل أولاً: عمود واحد) */
+.about,
+.location {
+  background-color: var(--surface-white);
+}
+
+.about-grid,
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.about-image img,
+.clinic-image img {
+  border-radius: 14px;
+  width: 100%;
+  height: 100%;
+}
+
+.about-bio {
+  margin-bottom: 16px;
+  color: var(--text-muted);
+}
+
+.qualifications-list {
+  padding-right: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 18px;
+  background-color: var(--bg-light);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.schedule-table th,
+.schedule-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border-color);
+  text-align: right;
+}
+
+.schedule-table th {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.address-text,
+.price-text {
+  margin-bottom: 10px;
+}
+
+.btn-map {
+  display: inline-block;
+  margin-top: 8px;
+  background-color: #ffffff;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.btn-map:hover {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* زر واتساب عائم */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: var(--whatsapp-color);
+  color: #ffffff;
+  font-weight: 700;
+  padding: 12px 18px;
+  border-radius: 999px;
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
+  z-index: 200;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.whatsapp-float:hover {
+  background-color: var(--whatsapp-hover);
+  transform: scale(1.06);
+}
+
+/* Footer */
+.footer {
+  background-color: var(--text-dark);
+  color: #e2e8f0;
+  padding: 24px 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* شاشات التابلت واللابتوب الصغيرة (768px فأعلى) */
+@media (min-width: 768px) {
+  .container {
+    padding: 0 24px;
+  }
+
+  .hero-actions {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-grid,
+  .location-grid {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* شاشات اللابتوب والديسكتوب (1024px فأعلى) */
+@media (min-width: 1024px) {
+  section {
+    padding: 76px 0;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.3rem;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
